@@ -287,6 +287,14 @@
       "category": "women's clothing",
       "image": "https://m.media-amazon.com/images/I/61w09t-kNuL._AC_UF894,1000_QL80_.jpg",
       "id": 26
+    },
+    {
+      "title": "Teclado 4",
+      "price": 100,
+      "description": "es el 4",
+      "category": "women's clothing",
+      "image": "https://m.media-amazon.com/images/I/61w09t-kNuL._AC_UF894,1000_QL80_.jpg",
+      "id": 27
     }
   ]
 }
