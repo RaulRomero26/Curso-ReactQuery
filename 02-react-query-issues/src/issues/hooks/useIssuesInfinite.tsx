@@ -37,17 +37,27 @@ const getIssues =async({pageParam = 1,queryKey}:QueryProps):Promise<Issue[]> => 
 }
 
 export const useIssuesInfinite = ({ state, labels }: Props) => {
-    const issuesQuery = useInfiniteQuery<Issue[], Error>({
-      queryKey: ['issues', 'infinite', { state, labels }],
-      queryFn: (data) => getIssues(data),
-      getNextPageParam: (lastPage, pages) => {
-        if (lastPage.length < 5) return;
-  
-        return pages.length + 1;
-      },
-    });
-  
-    return {
-      issuesQuery,
-    };
+  const issuesQuery = useInfiniteQuery({
+
+    queryKey: ['issues', 'infinite', { state, labels }],
+
+    queryFn: (data) => getIssues(data),
+
+    initialPageParam: 1,
+
+    getNextPageParam: (lastPage, pages) => {
+
+       if (lastPage.length === 0) return
+
+       return pages.length + 1
+
+    },
+
+ })
+
+  return {
+
+    issuesQuery,
+
+  }
   };
